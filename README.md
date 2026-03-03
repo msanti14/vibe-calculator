@@ -35,11 +35,11 @@ organización de código frontend sin frameworks.
 
 📂 Estructura del proyecto
 
-calculadora-vibe/
-│
-├── index.html
-├── styles.css
-├── script.js
+calculadora-vibe/  
+│  
+├── index.html  
+├── styles.css  
+├── script.js  
 └── README.md
 
 ------------------------------------------------------------------------
