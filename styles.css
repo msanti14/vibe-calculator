@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-gradient: linear-gradient(125deg, #1e1e2f, #3a2f5f, #2c5364);
+    --card: rgba(255,255,255,0.1);
+    --button: #444;
+    --button-hover: #666;
+    --text: white;
+}
+
+.light-mode {
+    --bg-gradient: linear-gradient(125deg, #f8f9fa, #e9ecef, #dee2e6);
+    --card: rgba(0,0,0,0.05);
+    --button: #dddddd;
+    --button-hover: #cccccc;
+    --text: #222;
+}
+
+
+
+body {
+    margin: 0;
+    background: var(--bg-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* CAMBIO CLAVE */
+    font-family: Arial, sans-serif;
+}
+
+.app {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.calculator {
+    background: var(--card);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 25px;
+    width: 320px;
+}
+
+#display {
+    width: 100%;
+    height: 55px;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: right;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--text);
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    height: 50px;
+    font-size: 18px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--text);
+    transition: all 0.15s ease;
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(4px);
+}
+
+.zero {
+    grid-column: span 2;
+}
+
+/* ===== HISTORIAL ===== */
+
+.history {
+    width: 250px;
+    height: 400px; /* ALTURA FIJA */
+    background: var(--card);
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#history-list {
+    flex: 1;
+    overflow-y: auto; /* SCROLL INTERNO */
+    margin-top: 10px;
+    padding-right: 5px;
+}
+
+#history-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+#history-list::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.3);
+    border-radius: 10px;
+}
+
+.history ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.history li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+#clear-history {
+    padding: 5px 10px;
+    border-radius: 8px;
+    background-color: #aa3333;
+    color: white;
+}
+
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
